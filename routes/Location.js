@@ -3,8 +3,7 @@ const router = express.Router();
 
 const User = require('../models/User');
 
-
-router.post('/location', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const {
             userid,
@@ -70,7 +69,7 @@ router.post('/location', async (req, res) => {
 // GET /api/users/locations
 // ==========================================
 
-router.get('/locations', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
 
         const users = await User.find(
@@ -108,7 +107,7 @@ router.get('/locations', async (req, res) => {
 // GET /api/users/location/:userid
 // ==========================================
 
-router.get('/location/:userid', async (req, res) => {
+router.get('/:userid', async (req, res) => {
     try {
 
         const user = await User.findOne(

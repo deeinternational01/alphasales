@@ -8,6 +8,7 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/Auth'));
 app.use('/api/users', require('./routes/Users'));
 app.use('/api/customers', require('./routes/Customer'));
+app.use('/api/location', require('./routes/Location'))
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)

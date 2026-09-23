@@ -50,7 +50,11 @@ router.post('/login', async (req, res) => {
         }
 
         // Return user type on successful login
-        res.status(200).json({ message: 'Login successful', type: user.type });
+       res.status(200).json({
+  message: 'Login successful',
+  _id: user._id,
+  type: user.type,
+})
     } catch (error) {
         res.status(500).json({ message: 'Server error', error });
     }
